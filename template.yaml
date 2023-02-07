@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+ Blecon Example Webhook Handler
+
+
+Globals:
+  Function:
+    Timeout: 3
+
+Parameters:
+  DestinationURL:
+    Type: String
+
+Resources:
+  ProcessRequestFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: process_request/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+        - arm64
+      FunctionUrlConfig:
+        AuthType: NONE
+      Environment:
+        Variables:
+          HANDLER: !Ref DestinationURL
+
+Outputs:
+  URLEndpoint:
+      Description: "My Lambda Function URL Endpoint. Set this as the handler in your Blecon Network."
+      Value: !GetAtt ProcessRequestFunctionUrl.FunctionUrl
