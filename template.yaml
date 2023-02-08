@@ -8,10 +8,6 @@ Globals:
   Function:
     Timeout: 3
 
-Parameters:
-  DestinationURL:
-    Type: String
-
 Resources:
   ProcessRequestFunction:
     Type: AWS::Serverless::Function
@@ -23,9 +19,7 @@ Resources:
         - arm64
       FunctionUrlConfig:
         AuthType: NONE
-      Environment:
-        Variables:
-          HANDLER: !Ref DestinationURL
+
 
 Outputs:
   URLEndpoint:
