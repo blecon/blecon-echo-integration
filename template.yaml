@@ -23,5 +23,5 @@ Resources:
 
 Outputs:
   URLEndpoint:
-      Description: "My Lambda Function URL Endpoint. Set this as the handler in your Blecon Network."
+      Description: "Your Lambda Function URL Endpoint. Set this as the handler in your Blecon Network."
       Value: !GetAtt ProcessRequestFunctionUrl.FunctionUrl
