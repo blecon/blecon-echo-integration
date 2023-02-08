@@ -1,6 +1,6 @@
 # blecon-echo-example
 
-This is the an example of the simplest possible Blecon handler. 
+This is an example of the simplest possible Blecon handler. 
 
 It returns the device payload back to Blecon, which will then be forwarded back to the device.
 
